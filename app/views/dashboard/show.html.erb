@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @entry.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @entry.email %>
+</p>
+
+<%= link_to 'Edit', edit_dashboard_path(@entry) %> |
+<%= link_to 'Back', dashboard_index_path %>

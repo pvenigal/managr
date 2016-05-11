@@ -1,1 +1,45 @@
-<h1>Dashboard</h1>
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">Contacts</h1> 
+<br>
+<p align="center">To add a new contact, click the "+" button</p>
+<br>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Table Style</title>
+	<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+</head>
+
+<body>
+<table class="table-fill">
+<thead>
+    <tr>
+      <th>Name&nbsp;&nbsp;</th>
+      <th>Email</th>
+      <th><div align="center"><button><%= link_to '+', new_dashboard_path %></button></div></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody class="table-hover">
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= entry.name %></td>
+        <td><%= entry.email %>&nbsp;&nbsp;</td>
+        <td><%= link_to ' Delete', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  
+
+  </body>
+    
+
+<br>
+    
+<div align="center"><button><%= link_to 'Export to CSV', "/entries.csv" %></button></div>
+
+

@@ -1,14 +1,17 @@
-class DashboardController < ApplicationController
-    before_filter :authenticate_user!
-    
-      before_action :set_entry, only: [:show, :edit, :update, :destroy]
+class EntriesController < ApplicationController
+  before_action :set_entry, only: [:show, :edit, :update, :destroy]
 
   # GET /entries
   # GET /entries.json
   def index
     @entries = Entry.all
+      respond_to do |format|
+          format.html
+          format.csv { render text: @entries.to_csv }
+      end 
   end
- # GET /entries/1
+
+  # GET /entries/1
   # GET /entries/1.json
   def show
   end

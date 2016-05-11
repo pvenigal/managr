@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :entries
   get 'grayscales/index'
 
   devise_for :users
@@ -6,6 +7,8 @@ Rails.application.routes.draw do
   resources :dashboard
     
   root to: "home#index"
+    
+#  get '/entries/:new', to: 'dashboard#new'
   
     
   # The priority is based upon order of creation: first created -> highest priority.
