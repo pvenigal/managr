@@ -6,7 +6,9 @@ class DashboardController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+   # @entries = Entry.all
+   @entries = current_user.entries
+
   end
  # GET /entries/1
   # GET /entries/1.json
@@ -25,7 +27,7 @@ class DashboardController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
-    @entry = Entry.new(entry_params)
+    @entry = current_user.entries.new(entry_params)
 
     respond_to do |format|
       if @entry.save

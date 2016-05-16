@@ -4,7 +4,7 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+      @entries = current_user.entries
       respond_to do |format|
           format.html
           format.csv { render text: @entries.to_csv }
@@ -28,7 +28,7 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
-    @entry = Entry.new(entry_params)
+     @entry = current_user.entries.new(entry_params)
 
     respond_to do |format|
       if @entry.save

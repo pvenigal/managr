@@ -7,4 +7,7 @@ class Entry < ActiveRecord::Base
             end
         end
     end
+    
+    belongs_to :user
+    validates :user, presence: true
 end
