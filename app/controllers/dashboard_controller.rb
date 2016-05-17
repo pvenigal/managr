@@ -6,7 +6,6 @@ class DashboardController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-   # @entries = Entry.all
    @entries = current_user.entries
 
   end
@@ -28,7 +27,6 @@ class DashboardController < ApplicationController
   # POST /entries.json
   def create
     @entry = current_user.entries.new(entry_params)
-
     respond_to do |format|
       if @entry.save
         format.html { redirect_to dashboard_index_path, notice: 'Entry was successfully created.' }

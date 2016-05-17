@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  resources :composes
   resources :entries
   get 'grayscales/index'
 
   devise_for :users
     
   resources :dashboard
+
+  resources :composes
     
   root to: "home#index"
     

@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1 align="center">Contacts</h1> 
+<h1 align="center">Dashboard - Subscribers</h1> 
 <br>
-<p align="center">To add a new contact, click the "+" button</p>
+<p align="center">To add a new subscriber, click the "+" button</p>
 <br>
 <html lang="en">
 <head>
@@ -40,6 +40,7 @@
 
 <br>
     
-<div align="center"><button><%= link_to 'Export to CSV', "/entries.csv" %></button></div>
+<div align="center"><button><%= link_to 'Export to CSV', "/entries.csv" %></button></div> <br>
 
+<div align="center"><button><%= link_to 'Email Subscribers', new_compose_path %></button></div>
 
