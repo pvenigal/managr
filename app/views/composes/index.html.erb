@@ -1,0 +1,34 @@
+<!-- <p id="notice"><%= notice %></p>
+
+<h1>Listing Composes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Subject</th>
+      <th>Message</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+#   <% @composes.each do |compose| %>
+      <tr>
+        <td><%= compose.name %></td>
+        <td><%= compose.email %></td>
+        <td><%= compose.subject %></td>
+        <td><%= compose.message %></td>
+        <td><%= link_to 'Show', compose %></td>
+        <td><%= link_to 'Edit', edit_compose_path(compose) %></td>
+        <td><%= link_to 'Destroy', compose, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+#    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+#<%= link_to 'New Compose', new_compose_path %> 
+-->
